@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pet: one
+  quantity: 1
+  status: MyString
+  shipDate: 2020-04-06
+  compelete: false
+
+two:
+  pet: two
+  quantity: 1
+  status: MyString
+  shipDate: 2020-04-06
+  compelete: false
