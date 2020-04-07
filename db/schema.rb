@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_06_163547) do
+ActiveRecord::Schema.define(version: 2020_04_06_183301) do
+
+  create_table "auctions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.bigint "bidder_id"
+    t.bigint "pet_owner_id"
+    t.bigint "pet_id"
+    t.integer "amount_of_money"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bidder_id"], name: "fk_rails_2f0de1b4b1"
+    t.index ["pet_id"], name: "index_auctions_on_pet_id"
+    t.index ["pet_owner_id"], name: "fk_rails_951caad683"
+  end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -57,6 +69,8 @@ ActiveRecord::Schema.define(version: 2020_04_06_163547) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "auctions", "users", column: "bidder_id"
+  add_foreign_key "auctions", "users", column: "pet_owner_id"
   add_foreign_key "orders", "pets"
   add_foreign_key "pets", "categories"
   add_foreign_key "pets", "tags"
