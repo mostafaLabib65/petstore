@@ -101,5 +101,3 @@
                     ]
                 }
 }
-
-* Also the app is deployed here
