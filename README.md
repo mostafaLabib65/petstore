@@ -5,10 +5,11 @@
 * Configuration
   you need to put your mysql user info in database.yml under /app/config
 * Database creation
+  
   run this commands in terminal:
   * bundle install
   * rails db:create
-  * rails db:reset
+  * rails db:reset:
   
 * Database initialization
   * rails db:migrate
@@ -16,6 +17,7 @@
 * Run the application
   * Rails s
 * How to run the test suite
+  
   Run this commands:
   
    * rake db:reset RAILS_ENV=test
